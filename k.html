@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account - The Refectory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#006400",
+                        "on-secondary-container": "#6a4800",
+                        "on-primary-fixed": "#002200",
+                        "surface-dim": "#d9dadc",
+                        "inverse-on-surface": "#f0f0f2",
+                        "surface-tint": "#126e0c",
+                        "primary": "#004900",
+                        "surface-container": "#eeeef0",
+                        "on-background": "#1a1c1d",
+                        "background": "#f9f9fb",
+                        "outline-variant": "#bfcab7",
+                        "tertiary-container": "#982962",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#ffb6d2",
+                        "on-primary-fixed-variant": "#005300",
+                        "tertiary-fixed": "#ffd9e5",
+                        "surface": "#f9f9fb",
+                        "on-secondary-fixed": "#281900",
+                        "on-primary-container": "#86df72",
+                        "on-surface": "#1a1c1d",
+                        "surface-variant": "#e2e2e4",
+                        "primary-fixed-dim": "#82db6f",
+                        "on-surface-variant": "#404a3b",
+                        "inverse-surface": "#2f3132",
+                        "surface-container-low": "#f3f3f5",
+                        "secondary-container": "#feb300",
+                        "secondary-fixed-dim": "#ffba38",
+                        "secondary-fixed": "#ffdeac",
+                        "secondary": "#7e5700",
+                        "primary-fixed": "#9df888",
+                        "inverse-primary": "#82db6f",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#604100",
+                        "outline": "#707a6a",
+                        "surface-bright": "#f9f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e2e4",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#3e0022",
+                        "tertiary-fixed-dim": "#ffb0ce",
+                        "surface-container-high": "#e8e8ea",
+                        "tertiary": "#790b4a",
+                        "on-tertiary-fixed-variant": "#851853",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex">
+<!-- SideNavBar (Persistent for Tablet 1024px) -->
+<nav class="hidden md:flex fixed inset-y-0 left-0 z-50 flex flex-col p-6 space-y-8 bg-slate-50 dark:bg-slate-950 h-full w-80 border-r-0 tonal-layering bg-slate-100 dark:bg-slate-900 shadow-2xl dark:shadow-none duration-300 ease-in-out">
+<div class="text-2xl font-black text-green-900 dark:text-green-50 tracking-tighter">The Refectory</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-green-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-['Manrope'] font-semibold" href="#">
+<span class="material-symbols-outlined">home</span> Home
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-green-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-['Manrope'] font-semibold" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span> Menu
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-green-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-['Manrope'] font-semibold" href="#">
+<span class="material-symbols-outlined">receipt_long</span> My Orders
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-green-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-['Manrope'] font-semibold" href="#">
+<span class="material-symbols-outlined">leaderboard</span> The Ledger
+            </a>
+</div>
+<div class="pt-8 mt-auto space-y-4">
+<div class="flex items-center gap-4 px-4 py-4 text-green-900 dark:text-green-50 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl transition-all">
+<img alt="Julian Casablancas" class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="close-up portrait of a stylish man with a confident expression and thoughtful eyes against a neutral grey studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtp762OjGsT32cZ1dVh2Gwedx2PFUTfZpQ0IYKXMmBYvBG1LSPwMtVe-wccqwuavLXfJYroTYzMZg8Kd-0BVlCWFT4I0IqBOOeIOn4MBIkmEiHtzgxxnyuE04kDFZtO05f2mSiPeiZpHWEkdhwHc16vJ6tTZe3fJLs6C51iSLBouLVsjLKSMwXpMDTr7U74UGbGwidkSPTsLH-GTG23AvABv54LrpCEy-9B_3eJjwciHQ0zZDANvOVdhm0Ysor7Ory_DK-e9eKh7No"/>
+<div>
+<p class="font-bold text-sm">Julian Casablancas</p>
+<p class="text-xs text-slate-500">Premium Member</p>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-green-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-['Manrope'] font-semibold" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-green-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-['Manrope'] font-semibold" href="#">
+<span class="material-symbols-outlined">help</span> Support
+                </a>
+</div>
+<button class="w-full mt-4 bg-primary text-on-primary py-3 px-4 rounded-xl font-bold transition-all active:scale-95">Logout</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-80 transition-all">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-0 md:left-80 z-40 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl no-border bg-slate-100 dark:bg-slate-900">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-7xl mx-auto">
+<div class="font-['Manrope'] font-bold tracking-tight text-green-900 dark:text-green-50">
+                    Account Overview
+                </div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors text-slate-500">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="md:hidden">
+<img class="w-8 h-8 rounded-full" data-alt="portrait of a man with a minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDquWlRiB51qJXNFDZBEJB-aISz-6XrbQ5tzXfmJX2cyppY646mgudecEwm6XHaO0OK6rjQIq8KodbZkv-_K7plEmDVdrfTvzwzK_vTjFk7hWqzXpcSrsj6v3hXt3mkU3RhhxnUrmW54s9gKFslhm9MZxf1NP9T9u8M-1gOfrSzDTh9f7ERA0JV3cJGbASuiV95hqyxkVwxSZMRgJH6osS4AXuqJ4-zVeRHyCLHFIgChbJ4rsNBgDaT2jdYyi5-eav-ByicxiXHbiE"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="pt-24 pb-12 px-8 max-w-5xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Main Profile Card -->
+<section class="md:col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-8 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+<div class="relative group">
+<img class="w-40 h-40 md:w-48 md:h-48 rounded-[2.5rem] object-cover shadow-xl border-4 border-surface-container-lowest" data-alt="large professional headshot of Julian Casablancas with natural light and soft blurred interior background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTyazQ14pXWMK_0KsqlFOZ7vPvNnd1Xk3blwwkyKUL7VZAAgPbQNCTaJdqszsX307bOvBTsva4Aafm_5VG-zxdUiXCKtiarrn_8xdRCsimG7cLN6jSafbqR9pwIEq-du4qICIktxu-loT8nEHuWvXwPz8XBU9jOpE0fs7NH7yWGblG3fpfGlm8RLbu0c_W47JH3OTh2j06uPH2htXqTDFJ93O1LEhFYFcET6BLS4cVTY_UIMWDM_hxklECs3LvVdUM526lNERpu-ZP"/>
+<button class="absolute -bottom-2 -right-2 bg-primary-container text-on-primary-container p-3 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="flex-1 text-center md:text-left pt-4">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-widest rounded-full mb-3">Premium Member</span>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-2 tracking-tighter">Julian Casablancas</h1>
+<p class="text-lg text-slate-500 font-medium mb-6">Creative Lead • Design &amp; Strategy</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-6 pt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="text-sm font-medium">julian.c@refectory.com</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">phone_iphone</span>
+<span class="text-sm font-medium">+1 234 567 8901</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Detail Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-6 rounded-3xl group hover:bg-primary/5 transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary bg-white p-2 rounded-xl shadow-sm">credit_card</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">Payment Methods</h3>
+<p class="text-sm text-slate-500">Mastercard ending in 4242</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-3xl group hover:bg-primary/5 transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary bg-white p-2 rounded-xl shadow-sm">location_on</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">Delivery Address</h3>
+<p class="text-sm text-slate-500">West Wing, 4th Floor, Desk 12</p>
+</div>
+</div>
+</section>
+<!-- Sidebar Content (Stats / Nutritional Ledger) -->
+<aside class="md:col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-primary text-on-primary p-8 rounded-[2rem] shadow-2xl overflow-hidden relative">
+<div class="absolute -right-4 -top-4 w-32 h-32 bg-primary-container rounded-full opacity-50 blur-3xl"></div>
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">analytics</span> The Ledger
+                        </h3>
+<div class="space-y-8 relative z-10">
+<div>
+<p class="text-xs uppercase tracking-widest opacity-70 mb-1">Total Savings</p>
+<p class="text-4xl font-black tracking-tight">$428.50</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest opacity-60 mb-1">Orders</p>
+<p class="text-xl font-bold">124</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest opacity-60 mb-1">Credits</p>
+<p class="text-xl font-bold">12,400</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 bg-white/10 backdrop-blur-md text-white py-3 rounded-xl text-sm font-bold border border-white/10 hover:bg-white/20 transition-all">View Full Analytics</button>
+</div>
+<div class="bg-surface-container-high p-8 rounded-[2rem]">
+<h3 class="text-lg font-extrabold text-green-900 mb-4">Account Preferences</h3>
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-slate-600">Daily Notifications</span>
+<div class="w-10 h-6 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-slate-600">Eco-Packaging Always</span>
+<div class="w-10 h-6 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-slate-600">Dark Mode</span>
+<div class="w-10 h-6 bg-slate-300 rounded-full relative">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-error-container text-on-error-container py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-error-container/80 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">logout</span> Deactivate Account
+                    </button>
+</aside>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-8px_32px_rgba(0,0,0,0.04)] no-border bg-slate-100/50 dark:bg-slate-900/50">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-6 py-2 scale-90 active:scale-100 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-6 py-2 scale-90 active:scale-100 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Order</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-6 py-2 scale-90 active:scale-100 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Ledger</span>
+</a>
+<a class="flex flex-col items-center justify-center text-green-900 dark:text-green-50 font-bold bg-green-100/50 dark:bg-green-900/30 rounded-2xl px-6 py-2 scale-90 active:scale-100 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Account</span>
+</a>
+</nav>
+</body></html>

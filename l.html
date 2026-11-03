@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 30%;
+  background: lightgray;
+}
+
+.content {
+  width: 70%;
+  background: white;
+}
+
+/* Jika layar kecil */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar, .content {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">Menu</div>
+  <div class="content">Isi Konten</div>
+</div>
+
+</body>
+</html>
